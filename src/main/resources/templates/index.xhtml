@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pr-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+</head>
+<body>
+    <h1>Controle de tarefas</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>TAREFA</th>
+                <th>DATA REGISTRO</th>
+                <th>STATUS</th>
+                <th>DATA CONCLUSÃO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="tarefa : ${listaTarefas}">
+                <td th:text="${tarefa.getTarefa}"></td>
+                <td th:text="${tarefa.getDataInicio}"></td>
+                <td th:text="${tarefa.getStatusTarefa}"></td>
+                <td th:text="${tarefa.getDataFim}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="newtask">Adicionar tarefa</a>
+</body>
+</html>
