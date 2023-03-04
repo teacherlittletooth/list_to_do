@@ -18,17 +18,17 @@ public class Tarefas {
     private String tarefa;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate data_inicio;
+    private Date data_inicio;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate data_fim;
+    private Date data_fim;
 
     private int status;
 
     public Tarefas(){}
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //AUTO-INCREMENT sobre MySQL
     public Long getIdTarefa() {
         return id_tarefa;
     }
@@ -37,11 +37,11 @@ public class Tarefas {
         return tarefa;
     }
 
-    public LocalDate getDataInicio() {
+    public Date getDataInicio() {
         return data_inicio;
     }
 
-    public LocalDate getDataFim() {
+    public Date getDataFim() {
         return data_fim;
     }
 
@@ -57,11 +57,11 @@ public class Tarefas {
         this.tarefa = tarefa;
     }
 
-    public void setDataInicio(LocalDate data_inicio) {
+    public void setDataInicio(Date data_inicio) {
         this.data_inicio = data_inicio;
     }
 
-    public void setDataFim(LocalDate data_fim) {
+    public void setDataFim(Date data_fim) {
         this.data_fim = data_fim;
     }
 
