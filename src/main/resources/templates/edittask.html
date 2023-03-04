@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pr-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+</head>
+<body>
+    <form method="post" th:action="@{/savetask}" th:object="${novaTarefa}">
+        <h1>Editar tarefa</h1>
+
+        <label for="id_tarefa">ID</label><br>
+        <input type="text" id="id_tarefa" th:field="${task.IdTarefa}" readonly>
+        
+        <br><br>
+
+        <label for="tarefa">Descrição da Tarefa</label><br>
+        <input type="text" id="tarefa" th:field="${task.Tarefa}" required>
+        
+        <br><br>
+        
+        <label for="data_inicio">Data do registro</label><br>
+        <input type="date" name="tarefa" id="tarefa" th:field="${task.DataInicio}">
+
+        <br><br>
+
+        <label for="status_tarefa">Status da tarefa</label><br>
+        <input type="number" name="status_tarefa" id="status_tarefa" th:field="${task.StatusTarefa}" required>
+
+        <br><br>
+
+        <label for="data_fim">Data de conclusão</label><br>
+        <input type="date" name="data_fim" id="data_fim" th:field="${task.DataFim}">
+
+        <br><br>
+
+        <input type="submit" value="Salvar alterações">
+    </form>
+</body>
+</html>

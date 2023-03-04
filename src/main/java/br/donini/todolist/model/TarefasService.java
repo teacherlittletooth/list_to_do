@@ -23,4 +23,12 @@ public class TarefasService {
         tarefasRepo.save(task);
     }
 
+    public void delete(Long id) {
+        tarefasRepo.deleteById(id);
+    }
+
+    public Tarefas getOne(Long id) {
+        return tarefasRepo.findById(id).get();
+    }
+
 }

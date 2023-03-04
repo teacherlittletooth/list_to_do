@@ -1,7 +1,6 @@
 package br.donini.todolist.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -18,10 +17,10 @@ public class Tarefas {
     private String tarefa;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date data_inicio;
+    private LocalDate data_inicio;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date data_fim;
+    private LocalDate data_fim;
 
     private int status;
 
@@ -37,11 +36,11 @@ public class Tarefas {
         return tarefa;
     }
 
-    public Date getDataInicio() {
+    public LocalDate getDataInicio() {
         return data_inicio;
     }
 
-    public Date getDataFim() {
+    public LocalDate getDataFim() {
         return data_fim;
     }
 
@@ -57,11 +56,11 @@ public class Tarefas {
         this.tarefa = tarefa;
     }
 
-    public void setDataInicio(Date data_inicio) {
+    public void setDataInicio(LocalDate data_inicio) {
         this.data_inicio = data_inicio;
     }
 
-    public void setDataFim(Date data_fim) {
+    public void setDataFim(LocalDate data_fim) {
         this.data_fim = data_fim;
     }
 
@@ -71,7 +70,9 @@ public class Tarefas {
 
     @Override
     public String toString() {
-        return "Data inicio: "+ this.data_inicio + "\nData fim: " + this.data_fim;
+        return "Tarefas [id_tarefa=" + id_tarefa + ", tarefa=" + tarefa + ", data_inicio=" + data_inicio + ", data_fim="
+                + data_fim + ", status=" + status + "]";
     }
 
+    
 }
